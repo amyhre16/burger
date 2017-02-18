@@ -9,11 +9,17 @@ var orm = {
 			res.json(result);
 		});
 	},
-	insertOne: function() {
-
+	insertOne: function(burger_name, devoured) {
+		var queryString = "INSERT INTO ?? (?, ?) VALUES (?, ?)";
+		connection.query(queryString, ["burgers", "burger_name", "devoured", burger_name, devoured], function(err, result) {
+			res.json(result);
+		});
 	},
-	updateOne: function() {
-
+	updateOne: function(id, devoured) {
+		var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
+		connection.query(queryString, ["burgers""devoured", devoured, "id", id], function(err, result) {
+			res.json(result);
+		});
 	}
 };
 
