@@ -11,7 +11,6 @@ var burger = {
 		return orm.insertOne("burgers", "burger_name", burger_name);
 	},
 	updateOne: function(id, devoured) {
-		// console.log(orm.updateOne("burgers", {devoured: devoured}, {id: id}));
 		return orm.updateOne("burgers", {devoured: devoured}, {id: id});
 	}
 };

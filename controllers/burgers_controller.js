@@ -5,7 +5,11 @@ var burger = require('./../models/burger.js');
 
 module.exports = function(app) {
 	app.get('/', function(req, res) {
-		res.json(burger.selectAll());
+		var burgers = burger.selectAll();
+		console.log("burgers");
+		console.log(burgers);
+		res.render('index', {burgers: burgers});
+		// res.json(burger.selectAll());
 	});
 
 	app.post('/insertOne', function(req, res) {
@@ -14,6 +18,5 @@ module.exports = function(app) {
 
 	app.post('/updateOne', function(req, res) {
 		res.json(burger.updateOne(req.body.id, req.body.devoured));
-		// console.log()
 	});
 };
