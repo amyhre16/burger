@@ -1,6 +1,23 @@
 <div class="row">
 	<div class="col-lg-6">
 		<ul>
+			{{#each burgers}}
+				<li>
+					{{#unless this.devoured}}
+						<p>
+							{{this.id}}. {{this.burger_name}}
+							<form action="/{{this.id}}?_method=PUT" method="POST">
+								<input type="hidden" name="id" value="{{this.id}}">
+								<button type="submit">Devour!</button>
+							</form>
+						</p>
+					{{/unless}}
+				</li>
+			{{/each}}
+		</ul>
+	</div>
+	<!-- <div class="col-lg-6">
+		<ul>
 			{{ #each burgers }}
 				<li>
 					{{ #if this.devoured }}
@@ -11,22 +28,9 @@
 								<button type="submit">Devour!</button>
 							</form>
 						</p>
+					{{/if}}
 				</li>
-		</ul>
-	</div>
-	<!-- <div class="col-lg-6">
-		<ul>
-			{{ #each burgers }}
-				<li>
-					{{ #unless this.devoured }}
-						<p>
-							{{this.id}}. {{this.name}}
-							<form action="/{{this.id}}?_method=PUT" method="POST">
-								<input type="hidden" name="id" value="{{this.id">
-								<button type="submit">Devour!</button>
-							</form>
-						</p>
-				</li>
+			{{/each}}
 		</ul>
 	</div> -->
 </div>

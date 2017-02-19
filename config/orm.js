@@ -5,8 +5,8 @@ var orm = {
 		var queryString = "SELECT * FROM ??";
 		
 		connection.query(queryString, [table], function(err, result) {
-			// console.log("result");
-			// console.log(result);
+			/*console.log("result");
+			console.log(result);*/
 			if (err) throw err;
 
 			return result;

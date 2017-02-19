@@ -1,10 +1,9 @@
 var orm = require('./../config/orm.js');
-var express = require('express');
-
-var app = express();
 
 var burger = {
 	selectAll: function() {
+		console.log("burger.js");
+		console.log(orm.selectAll("burgers"));
 		return orm.selectAll("burgers");
 	},
 	insertOne: function (burger_name) {
