@@ -1,24 +1,30 @@
 var connection = require('./connection.js');
 
 var orm = {
-	selectAll: function() {
-		var queryString = "SELECT ?? FROM ??";
+	selectAll: function(table) {
+		var queryString = "SELECT * FROM ??";
 		
-		connection.query(queryString, ["*", "burgers"], function(err, result) {
+		connection.query(queryString, [table], function(err, result) {
 			console.log(result);
-			res.json(result);
+			if (err) throw err;
+			// res.json(result);
+			return result;
 		});
 	},
-	insertOne: function(burger_name, devoured) {
-		var queryString = "INSERT INTO ?? (?, ?) VALUES (?, ?)";
-		connection.query(queryString, ["burgers", "burger_name", "devoured", burger_name, devoured], function(err, result) {
-			res.json(result);
+	insertOne: function(table, columns, values) {
+		var queryString = "INSERT INTO ?? (??) VALUES (?)";
+		connection.query(queryString, [table, columns, values], function(err, result) {
+			if (err) throw err;
+
+			return result;
 		});
 	},
-	updateOne: function(id, devoured) {
-		var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-		connection.query(queryString, ["burgers""devoured", devoured, "id", id], function(err, result) {
-			res.json(result);
+	updateOne: function(table, setClause, whereClause) {
+		var queryString = "UPDATE ?? SET ? WHERE ?";
+		connection.query(queryString, [table, setClause, whereClause], function(err, result) {
+			if (err) throw err;
+			
+			return result;
 		});
 	}
 };
