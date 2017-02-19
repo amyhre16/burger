@@ -13,7 +13,7 @@ module.exports = function(app) {
 	});
 
 	app.post('/updateOne', function(req, res) {
-		res.json(burger.updateOne(req.body.devoured, req.body.id));
+		res.json(burger.updateOne(req.body.id, req.body.devoured));
 		// console.log()
 	});
 };
