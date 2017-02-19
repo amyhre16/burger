@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var connectInfo = {
 	host: 'localhost',
 	user: 'root',
-	password: 'secret',
+	password: '',
 	database: 'burgers_db'
 };
 
