@@ -5,18 +5,19 @@
 <head>
 	<title>Bob's Burgers</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body style="background-color: #f4e01f;">
+<body>
 	<div class="container">
-		<h1 style="text-align: center; color: #e92632;">Welcome to Bob's Burgers!</h1>
-		<img src="img/bobs-burgers.png" style="margin: auto; width: 130px; display: block;" />
+		<h1>Welcome to Bob's Burgers!</h1>
+		<img src="img/bobs-burgers.png" />
 		
 		{{{ body }}}
 		<div class="col-lg-4"></div>
-		<div class="col-lg-4" style="text-align: center;">
+		<div class="col-lg-4">
 
 			<form action="/" method="POST">
-				<textarea type="text" name="burger_name" style="width: 100%"></textarea>
+				<textarea type="text" name="burger_name"></textarea>
 				<br />
 				<button class="btn btn-success" type="submit">Submit</button>
 			</form>
