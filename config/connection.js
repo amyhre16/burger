@@ -1,11 +1,11 @@
 'use strict'
 
 var mysql = require('mysql');
-var password = require('./../password.js');
+// var password = require('./../password.js');
 var connectInfo = {
 	host: 'localhost',
 	user: 'root',
-	password: password.password,
+	password: '',
 	database: 'burgers_db'
 };
 
