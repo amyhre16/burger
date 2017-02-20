@@ -5,9 +5,9 @@ var burger = require('./../models/burger.js');
 
 module.exports = function(app) {
 	app.get('/', function(req, res) {
-		var burgers = burger.selectAll();
-		/*console.log("burgers");
-		console.log(burgers);*/
+		var burgers = burger.selectAll(consoleLog);
+		console.log("burgers");
+		console.log(burgers);
 		var burgersArr = [
 			{
 				id: 1,
@@ -25,6 +25,9 @@ module.exports = function(app) {
 				devoured: 1
 			}
 		];
+		// var burgersArr = burger.selectAll(consoleLog);
+		// console.log(burgersArr);
+		// res.render('index', {burgers: burger.selectAll(consoleLog)});
 		res.render('index', {burgers: burgersArr});
 		// res.json(burger.selectAll());
 	});
@@ -37,3 +40,9 @@ module.exports = function(app) {
 		res.json(burger.updateOne(req.body.id, req.body.devoured));
 	});
 };
+
+function consoleLog(result) {
+	console.log("result");
+	console.log(result);
+	return result;
+}
